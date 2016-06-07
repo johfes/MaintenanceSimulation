@@ -47,11 +47,9 @@ public class Simulation {
 		return FORMAT;
 	}
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {	
 		Scanner s = new Scanner(System.in);
-
-		System.out.println("Wie lange ist die MTBF?");
+		System.out.println("Wie lange ist die MTBF in Tagen?");
 		mtbf = s.nextDouble();
 		System.out.println("Wieviele Tage soll die Simulation dauern?");
 		simulationDurance = s.nextDouble();
@@ -67,7 +65,6 @@ public class Simulation {
 		    for(Entry<Double, ArrayList<String>> entry : FEL.entrySet()) {
 		    	  final Double key = entry.getKey();
 		    	  final Object value = entry.getValue();
-
 		    	  System.out.println(String.format(FORMAT, key) + " => " + value);
 		    }
 		    
@@ -96,8 +93,7 @@ public class Simulation {
 		System.out.println("Verfügbarkeit: "+
 				String.format(FORMAT, calculateAvailability(machine.getDownTime()))+"%");
 		System.out.println("durchschnittliche Warteschlangenlänge: "+
-				String.format(FORMAT, getAverageWSLength(machine.getWSLengths())));
-		
+				String.format(FORMAT, getAverageWSLength(machine.getWSLengths())));		
 	}
 	
 	private static void execute(String eventType, Machine machine) {
