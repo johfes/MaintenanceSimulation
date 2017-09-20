@@ -1,2 +1,1 @@
-# Simulation pf PdM 
-with JAva only
+# Simulation of PdM 
